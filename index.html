@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water effect</title>
+  </head>
+  <body>
+    <div class="background">
+      <div></div>
+    </div>
+    <svg>
+      <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+        <feTurbulence id="sea-filter" numOctaves="4" seed="2" baseFrequency="0.02 0.05"></feTurbulence>
+        <feDisplacementMap scale="10" in="SourceGraphic"></feDisplacementMap>
+        <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="80s" keyTimes="0;0.5;1" values="0.02 0.06;0.04 0.08;0.02 0.06" repeatCount="indefinite"></animate>
+      </filter>
+    </svg>
+  </body>
+</html>
